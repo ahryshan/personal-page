@@ -1,0 +1,39 @@
+.card-body {
+    font-size: unset;
+    display: grid;
+    grid-template-areas: "title title"
+                         "dates location"
+                         "description description";
+
+    grid-template-columns: max-content 1fr;
+    column-gap: 1em;
+}
+
+.title {
+    grid-area: title;
+    font-size: 2rem;
+    text-align: start;
+    margin-bottom: 0.1em;
+}
+
+.company-name {
+    font-style: italic;
+}
+
+.dates {
+    margin: 0;
+    grid-area: dates;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.location {
+    margin: 0;
+    grid-area: location;
+    font-size: 1rem;
+}
+
+.description {
+    grid-area: description;
+    font-weight: 300;
+}

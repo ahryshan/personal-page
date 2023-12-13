@@ -1,0 +1,54 @@
+.header-wrapper {
+    position: relative;
+    left: var(--offset);
+
+    transition: left 0.1s ease-out;
+
+    background-color: var(--background-invert-color);
+    color: var(--text-invert-color);
+}
+
+.header-content {
+    display: grid;
+
+    grid-template-columns: min-content 1fr;
+    grid-template-areas: "job-title name"
+                        "links links";
+
+    max-width: 85%;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.name {
+    font-size: 12rem;
+    width: min-content;
+    text-align: start;
+    font-weight: 1000;
+    line-height: 0.9;
+
+    grid-area: name;
+}
+
+.job-title {
+    font-size: 2rem;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    opacity: 0.5;
+
+    grid-area: job-title;
+}
+
+.links {
+    grid-area: links;
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+
+    a {
+        color: inherit;
+    }
+}

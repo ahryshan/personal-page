@@ -1,0 +1,40 @@
+main {
+    overflow: hidden;
+}
+
+section.animated {
+    position: relative;
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+
+    &:nth-child(odd) {
+        animation-name: sweep-from-right;
+    }
+
+    &:nth-child(even) {
+        animation-name: sweep-from-left;
+    }
+}
+
+@keyframes sweep-from-left {
+    0% {
+        right: 100vw;
+        opacity: 0;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes sweep-from-right {
+    0% {
+        left: 100vw;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
