@@ -1,11 +1,17 @@
 .header-wrapper {
     position: relative;
-    left: var(--offset);
 
     transition: left 0.1s ease-out;
 
     background-color: var(--background-invert-color);
     color: var(--text-invert-color);
+
+    font-size: 2rem;
+    left: var(--offset);
+
+    @media (max-width: 1000px) {
+        font-size: 1rem;
+    }
 }
 
 .header-content {
@@ -21,22 +27,32 @@
 }
 
 .name {
-    font-size: 12rem;
+    font-size: 6em;
     width: min-content;
     text-align: start;
     font-weight: 1000;
     line-height: 0.9;
 
     grid-area: name;
+
+    @media (max-width: 800px) {
+        font-size: 4em;
+    }
 }
 
 .job-title {
-    font-size: 2rem;
+    // font-size: 0.75em;
+
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     opacity: 0.5;
 
     grid-area: job-title;
+    font-size: inherit;
+
+    @media (max-width: 800px) {
+        font-size: 0.75em;
+    }
 }
 
 .links {
@@ -44,11 +60,15 @@
     display: flex;
     justify-content: space-evenly;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    // font-size: 0.75em;
     color: var(--primary-color);
     margin-bottom: 1rem;
 
     a {
         color: inherit;
+    }
+
+    @media (max-width: 800px) {
+        font-size: 0.75em;
     }
 }

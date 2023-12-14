@@ -9,11 +9,11 @@ pub fn JobCard(job: Job) -> impl IntoView {
     let styles = style_sheet!("./src/components/job_card.scss");
 
     let company_frag = match job.company_link {
-        Some(link) => view! {
+        Some(link) => view! { class = styles,
             <a class="company-name" href={ link } target="_blank">{ job.company_name }</a>
         }
         .into_any(),
-        None => view! {
+        None => view! { class = styles,
             <span class="company-name">{ job.company_name }</span>
         }
         .into_any(),

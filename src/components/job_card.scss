@@ -7,11 +7,18 @@
 
     grid-template-columns: max-content 1fr;
     column-gap: 1em;
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "title"
+                             "dates"
+                             "location"
+                             "description";
+    }
 }
 
 .title {
     grid-area: title;
-    font-size: 2rem;
     text-align: start;
     margin-bottom: 0.1em;
 }
@@ -21,16 +28,16 @@
 }
 
 .dates {
+    font-size: 0.75em;
     margin: 0;
     grid-area: dates;
-    font-size: 1rem;
     font-weight: 300;
 }
 
 .location {
+    font-size: 0.75em;
     margin: 0;
     grid-area: location;
-    font-size: 1rem;
 }
 
 .description {

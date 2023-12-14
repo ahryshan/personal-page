@@ -17,8 +17,6 @@ pub fn TitleHeader() -> impl IntoView {
             return;
         }
 
-        event.prevent_default();
-
         let header_width = header.client_width();
         let move_factor = header_width as f64 / header_height as f64;
         let offset = scroll * move_factor;

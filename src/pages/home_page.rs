@@ -30,13 +30,15 @@ pub fn HomePage() -> impl IntoView {
         .map(|job| view! { <JobCard job={job.clone()}/> })
         .collect::<Vec<_>>();
 
+    let crate_version = env!("CARGO_PKG_VERSION");
+
     let create_section_animation = || {
         let section_ref = create_node_ref::<Section>();
         use_intersection_observer(section_ref, |entries, observer| {
             if entries[0].is_intersecting() {
                 let _ = entries[0].target().class_list().add_1("animated");
+                let _ = entries[0].target().class_list().remove_1("hidden");
                 observer.unobserve(&entries[0].target());
-                logging::log!("animated");
             }
         });
         section_ref
@@ -53,7 +55,7 @@ pub fn HomePage() -> impl IntoView {
     view! { class = styles,
         <TitleHeader/>
         <main>
-            <section node_ref=who_am_i_ref>
+            <section node_ref=who_am_i_ref class="hidden">
                 <h2>"Who am I?"</h2>
                 <p>
                     "I'm a software engineer with passion for building things. "
@@ -83,7 +85,7 @@ pub fn HomePage() -> impl IntoView {
                     </a>"."
                 </p>
             </section>
-            <section node_ref=what_do_i_do_ref>
+            <section node_ref=what_do_i_do_ref class="hidden">
                 <h2>"What do I do?"</h2>
                 <p>
                     "I'm a web full-stack developer, and I'm trying to learn about "
@@ -97,13 +99,13 @@ pub fn HomePage() -> impl IntoView {
                     "so that engine I've mentioned is written in Rust. And this website too. "
              </p>
             </section>
-            <section node_ref=my_last_jobs_ref>
+            <section node_ref=my_last_jobs_ref class="hidden">
                 <h2>"Where have I've worked recently?"</h2>
                 <div class="job-list">
                     {jobs}
                 </div>
             </section>
-            <section node_ref=cool_stuff_ref>
+            <section node_ref=cool_stuff_ref class="hidden">
                 <h2>"But what about the cool stuff?"</h2>
                 <p>
                     "I have a couple of interesting (for me) projects that I've worked on. "
@@ -112,7 +114,7 @@ pub fn HomePage() -> impl IntoView {
                     "So here are some of them: "
                 </p>
             </section>
-            <section node_ref=be_rust_ref>
+            <section node_ref=be_rust_ref class="hidden">
                 <h3>
                     <a href="https://github.com/nightingazer/bizarre-engine-rust" target="_blank">
                         "Bizarre Engine"
@@ -136,7 +138,7 @@ pub fn HomePage() -> impl IntoView {
                     "It's open source and it always will be. Not like anyone would want to use it when Unreal or Godot exists, but still. "
                 </p>
             </section>
-            <section node_ref=ray_man_ref>
+            <section node_ref=ray_man_ref class="hidden">
                 <h3>
                     <a href="https://github.com/nightingazer/RayMan" target="_blank">
                         "RayMan"
@@ -150,7 +152,7 @@ pub fn HomePage() -> impl IntoView {
                     "to see how raytracing works. "
                 </p>
             </section>
-            <section node_ref=be_cpp_ref>
+            <section node_ref=be_cpp_ref class="hidden">
                 <h3>
                     <a href="https://github.com/Bizarre-Bits/AGE" targe="_blank">
                         "Another Game Engine (abandoned C++ version)"
@@ -171,6 +173,7 @@ pub fn HomePage() -> impl IntoView {
 
         <footer>
             <p> "Made with " <span class="heart">"❤"</span> " by Alex Hryshan" </p>
+            <p> "Version: " <span class="version">{crate_version}</span> </p>
             <p> "This website is open source and you can find it on "
                 <a href="https://github.com/nightingazer/personal-page" target="_blank">"Github"</a>". "
                 "And huge shout out to "
@@ -178,7 +181,7 @@ pub fn HomePage() -> impl IntoView {
             </p>
             <p>
                 "Wow, you've read it all the way to the end. "
-                "You're good reader, I suppose?.."
+                "You're a good reader, I suppose?.."
             </p>
         </footer>
     }
