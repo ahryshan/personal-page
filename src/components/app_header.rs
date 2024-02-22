@@ -25,7 +25,7 @@ pub fn TitleHeader() -> impl IntoView {
     });
 
     view! { class = styles,
-            <div class="header-wrapper" style={move || format!("--offset: -{}px", header_offset.get())} _ref=header_ref>
+                        <div class="header-wrapper" style={move || format!("--offset: -{}px", header_offset.get())} _ref=header_ref>
                 <div class="header-content">
                     <h1 class="name">"Alex Hryshan"</h1>
                     <h2 class="job-title">"\"Software Engineer\""</h2>

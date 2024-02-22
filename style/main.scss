@@ -111,3 +111,9 @@ footer {
 	opacity: 0.5;
 	text-align: left;
 }
+
+.pointable {
+	&:hover {
+		cursor: pointer;
+	}
+}

@@ -1,3 +1,5 @@
+#![feature(type_changing_struct_update)]
+
 use cfg_if::cfg_if;
 pub mod app;
 pub mod components;
@@ -5,6 +7,7 @@ pub mod error_template;
 pub mod fileserv;
 pub mod model;
 pub mod pages;
+pub mod utils;
 
 cfg_if! { if #[cfg(feature = "hydrate")] {
     use leptos::*;
