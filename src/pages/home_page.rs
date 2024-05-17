@@ -84,7 +84,7 @@ pub fn HomePage() -> impl IntoView {
                     " I'm a software engineer with passion for building things.
                         Currently I'm working at "
                     <a href="https://astek.pl" target="_blank">"Astek Polska"</a>
-                    " as a full-stack developer with Angular and .Net and
+                    " as a full-stack developer
                         studying Computer Science at "
                     <a href="https://cdv.pl" target="_blank">"Collegium Da Vinci"</a>
                     " in Poznań, although I have "
@@ -122,7 +122,10 @@ pub fn HomePage() -> impl IntoView {
                         few months I've been working on a game engine completely
                         from scratch. I'm also a big fan of Rust and I'm trying
                         to use it whenever I can, so that engine I've mentioned
-                        is written in Rust. And this website too. "
+                        is written in Rust. And" 
+                        <a href="https://github.com/nightingazer/personal-page" target="_blank">
+                            "this website too. "
+                        </a>
              </p>
             </section>
             // <section node_ref=_skillset_ref class="hidden">
@@ -176,7 +179,7 @@ pub fn HomePage() -> impl IntoView {
                 <p>
                     "It's open source and you can find it on "
                     <a href="https://github.com/nightingazer/bizarre-engine-rust" target="_blank">"my Github"</a>". "
-                    "It's open source and it always will be. Not like anyone would want to use it when Unreal or Godot exists, but still. "
+                    "It's open source and it always will be."
                 </p>
             </section>
             <section node_ref=_ray_man_ref class="hidden">
@@ -204,7 +207,7 @@ pub fn HomePage() -> impl IntoView {
                     programming. And then I've decided to " <i>"rewrite it in
                     Rust™"</i> ". Also, I've got unsatisfied with the design and
                     architecture of the engine, so started anew with the
-                    knowledge I've gained. And I thought it would be more fun to
+                    knowledge I've gained. And I thought it would be a good idea to
                     write it in Rust (it is). Also, it uses OpenGL, which is not
                     as fun as Vulkan."
                 </p>
