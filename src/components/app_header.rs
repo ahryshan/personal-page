@@ -30,9 +30,8 @@ pub fn TitleHeader() -> impl IntoView {
                     <h1 class="name">"Alex Hryshan"</h1>
                     <h2 class="job-title">"\"Software Engineer\""</h2>
                     <div class="links">
-                        <a href="https://twitter.com/fancybodyhole_" target="_blank">My Twitter</a>
-                        <a href="https://github.com/nightingazer" target="_blank">My Github</a>
-                        <a href="https://linkedin.com/in/alex-hryshan" target="_blank">My Linkedin</a>
+                        <a href="https://github.com/nightingazer" target="_blank">Github</a>
+                        <a href="https://linkedin.com/in/alex-hryshan" target="_blank">Linkedin</a>
                     </div>
                 </div>
             </div>
